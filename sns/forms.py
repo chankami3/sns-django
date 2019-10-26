@@ -13,7 +13,7 @@ class GroupCheckForm(forms.Form):
         public = User.objects.filter(username='public').first()
         self.fields['groups'] = forms.MultipleChoiceField(
             choices=[(item.title, item.title) for item in \
-                Group.objects.filter(owner__in[user, public])],
+                Group.objects.filter(owner__in=[user, public])],
             widget=forms.CheckboxSelectMultiple(),
         )
 
