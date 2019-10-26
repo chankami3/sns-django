@@ -5,6 +5,9 @@
 ### vscode ###
 .vscode/
 
+### secret file ###
+secret.md
+
 ### Django ###
 *.log
 *.pot
