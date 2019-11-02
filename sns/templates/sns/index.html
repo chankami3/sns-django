@@ -10,7 +10,7 @@
 <ul class="messages">
     {% for message in messages %}
     <li{% if message.tags %} class="{{ message.tags }}"
-        {% endif %}></li>
+        {% endif %}>{{message}}</li>
     {% endfor %}
 </ul>
 {% endif %}
@@ -43,7 +43,7 @@
     <p class="share_item_content">{{item.get_share}}</p>
 {% endif %}
 <p class="message_owner">
-    <span class="message_counter">share={{item.share_count}} \
+    <span class="message_counter">share={{item.share_count}}
         good={{item.good_count}}</span>
     "{{item.owner}}"(<a href="{% url 'add' %}?name={{item.owner}}">
         add friend</a>)

@@ -22,7 +22,7 @@ class GroupSelectForm(forms.Form):
     def __init__(self, user, *args, **kwargs):
         super(GroupSelectForm, self).__init__(*args, **kwargs)
         self.fields['groups'] = forms.ChoiceField(
-            choices=['-', '-'] + [(item.title, item.title) \
+            choices=[('-', '-')] + [(item.title, item.title) \
                 for item in Group.objects.filter(owner=user)],
         )
 
