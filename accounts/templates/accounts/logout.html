@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'sns/css/style.css' %}" />
+</head>
+<body>
+    <h1>Logout</h1>
+    <p>Logoutしました。</p>
+    <a href="{% url 'accounts:login' %}">再度Loginするには、ココをクリックしてください。</a>
+    </form>
+</body>
+</html>

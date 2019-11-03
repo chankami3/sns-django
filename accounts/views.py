@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views.generic import FormView
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import LoginForm
 
 class UserCreateView(FormView):
@@ -30,3 +31,6 @@ class UserCreateView(FormView):
 class Login(LoginView):
     form_class = LoginForm
     template_name = 'accounts/login.html'
+
+class Logout(LogoutView, LoginRequiredMixin):
+    template_name = 'accounts/logout.html'
