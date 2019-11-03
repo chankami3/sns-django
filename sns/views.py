@@ -13,7 +13,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
 
-@login_required(login_url='/admin/login/')
+@login_required
 def index(request):
     # public userを取得
     (public_user, public_group) = get_public()
@@ -70,7 +70,7 @@ def index(request):
     return render(request, 'sns/index.html', params)
 
 
-@login_required(login_url='/admin/login/')
+@login_required
 def groups(request):
     # 自分が登録したFriendを取得
     friends = Friend.objects.filter(owner=request.user)
@@ -140,7 +140,7 @@ def groups(request):
 
 
 # Friendの追加処理
-@login_required(login_url='/admin/login/')
+@login_required
 def add(request):
     # 追加するUserを取得
     add_name = request.GET['name']
@@ -172,7 +172,7 @@ def add(request):
 
 
 # Groupの作成処理
-@login_required(login_url='/admin/login/')
+@login_required
 def creategroup(request):
     # Groupを作り、Userとtitleを設定し保存する
     gp = Group()
@@ -184,7 +184,7 @@ def creategroup(request):
 
 
 # メッセージポストの処理
-@login_required(login_url='/admin/login/')
+@login_required
 def post(request):
     #POST送信時の処理
     if request.method == 'POST':
@@ -219,7 +219,7 @@ def post(request):
 
 
 # 投稿をシェアする
-@login_required(login_url='/admin/login/')
+@login_required
 def share(request, share_id):
     # shareするMessageの取得
     share = Message.objects.get(id=share_id)
@@ -259,7 +259,7 @@ def share(request, share_id):
 
 
 # goodボタンの処理
-@login_required(login_url='/admin/login/')
+@login_required
 def good(reqest, good_id):
     # goodするMessageを取得
     good_msg = Message.objects.get(id=good_id)
