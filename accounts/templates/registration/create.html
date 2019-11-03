@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'sns/css/style.css' %}" />
+</head>
+<body>
+    <h1>Create</h1>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    <button name="next" value="confirm" type="submit">confirm</button>
+    </form>
+</body>
+</html>
