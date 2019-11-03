@@ -17,7 +17,7 @@
 
 {% block content %}
 <p class="share_content">{{share.content}} ({{share.owner}})</p>
-<form action="{% url 'share' share.id %}" method="post">
+<form action="{% url 'sns:share' share.id %}" method="post">
 {% csrf_token %}
 <table>
 {{form.as_table}}
