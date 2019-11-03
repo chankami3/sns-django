@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'sns/css/style.css' %}" />
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="" method="POST">
+    {% csrf_token %}
+        {{form.non_field_errors}}
+        <table>
+            <tr><td>UserName</td><td>{{form.username}}</td></tr>
+            <tr><td>PassWord</td><td>{{form.password}}</td></tr>
+        </table>
+        <hr>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
