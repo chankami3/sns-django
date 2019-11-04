@@ -129,3 +129,9 @@ LOGIN_REDIRECT_URL = 'sns:index'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'hogehoge@gmail.com'
+DEFAULT_FROM_EMAIL = 'hogehogehoge@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
